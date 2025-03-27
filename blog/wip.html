@@ -9,10 +9,45 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <meta property="og:title" content="Hashing: A Detailed Guide" />
     <meta property="og:description" content="Dive into the scientific details of hashing functions, learn about the underlying math, and explore hashing processes interactively." />
-
     <meta property="og:image" content="../images/hash-icon.png" />
     <meta property="og:type" content="website" />
 </head>
+
+<style>
+    body {
+        background-color: #1a202c;
+        color: #a0aec0;
+        margin: 0;
+        overscroll-behavior: none;
+        position: relative;
+    }
+    .link {
+        color: #3182ce;
+        text-decoration: underline;
+        font-size: 1.25rem;
+    }
+    header {
+        display: block;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    header nav {
+        text-align: center;
+    }
+
+    header a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+
+    header a:hover {
+        color: #ddd;
+    }
+</style>
 
 <body class="font-mono">
     <div id="header"></div>
@@ -20,7 +55,7 @@
     <main class="container mx-auto py-12 px-4">
         <article class="bg-gray-900 rounded-lg shadow-lg p-6">
             <h1 class="text-3xl font-bold text-white mb-4">Hashing: A Deep Dive into Its Mathematical Core</h1>
-            <p class="text-gray-400 mb-4">By Jacob| DOP</p>
+            <p class="text-gray-400 mb-4">By Jacob | DOP</p>
 
             <section class="mb-6">
                 <h2 class="text-2xl font-semibold text-white mb-2">Introduction</h2>
@@ -111,48 +146,19 @@ Round 1-64:
 
             <section class="mb-6">
                 <h2 class="text-2xl font-semibold text-white mb-2">Applications of Hashing</h2>
-                <p class="text-gray-300 mb-4">Hashing is vital in:</p>
+                <p class="text-gray-300 mb-4">Hashing plays an essential role in various fields:</p>
                 <ul class="list-disc pl-6 text-gray-300">
-                    <li><strong>Password Storage:</strong> Encrypt passwords with hashes to keep them secure.</li>
-                    <li><strong>Blockchain:</strong> Hashing maintains data integrity in blockchain ledgers.</li>
-                    <li><strong>Digital Signatures:</strong> Provide unique, secure verification of messages or documents.</li>
-                    <li><strong>Data Retrieval:</strong> Hash tables allow for efficient data storage and retrieval.</li>
+                    <li><strong>Password Storage:</strong> Storing passwords securely in a hashed form ensures that even if the database is compromised, the passwords remain safe.</li>
+                    <li><strong>Data Integrity:</strong> Hashing ensures that data hasn't been altered by generating a checksum and comparing it to the expected value.</li>
+                    <li><strong>Digital Signatures:</strong> Hash functions are used in creating digital signatures for secure transactions and document verification.</li>
                 </ul>
-            </section>
-
-            <section class="mb-6>
-                <h2 class="text-2xl font-semibold text-white mb-2">Collisions and Their Implications</h2>
-                <p class="text-gray-300 mb-4">A "collision" occurs when two distinct inputs produce the same hash output. In cryptographic hashing, avoiding collisions is crucial to maintain security and integrity. Here’s an example of how rare collisions are designed to be in a well-constructed hash function:</p>
-
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <p class="text-gray-300">Enter two values to see if they produce the same hash:</p>
-                    <input type="text" id="collisionInput1" placeholder="Value 1" class="bg-gray-700 text-white p-2 rounded mb-2 w-full" />
-                    <input type="text" id="collisionInput2" placeholder="Value 2" class="bg-gray-700 text-white p-2 rounded mb-2 w-full" />
-                    <button onclick="checkCollision()" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded w-full">Check for Collision</button>
-                    <p class="text-gray-300 mt-4">Result: <span id="collisionResult" class="text-white font-bold"></span></p>
-                </div>
-                <script>
-                    function checkCollision() {
-                        const input1 = document.getElementById('collisionInput1').value;
-                        const input2 = document.getElementById('collisionInput2').value;
-                        const hash1 = CryptoJS.SHA256(input1).toString(CryptoJS.enc.Hex);
-                        const hash2 = CryptoJS.SHA256(input2).toString(CryptoJS.enc.Hex);
-                        const result = hash1 === hash2 ? "Collision!" : "No Collision!";
-                        document.getElementById('collisionResult').innerText = result;
-                    }
-                </script>
-            </section>
-
-            <section class="mb-6">
-                <h2 class="text-2xl font-semibold text-white mb-2">Conclusion</h2>
-                <p class="text-gray-300 mb-4">Hashing is a fundamental technique that serves numerous applications in computing, from data integrity to cryptographic security. By understanding the mathematical functions and mechanisms behind hashing, we can better appreciate its role in protecting data and enabling efficient data management.</p>
-                <p class="text-gray-300">Experiment with the examples above, and consider how the principles of hashing apply to other areas of technology and security.</p>
             </section>
         </article>
     </main>
 
-    <div id="footer"></div>
+    <footer class="bg-gray-900 text-white py-4 text-center">
+        <p>&copy; 2025 All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
-
